@@ -1,0 +1,139 @@
+﻿@model LocaFácil.App.Areas.Veiculos.Models.VeiculoViewModel
+
+@{
+    ViewData["Title"] = "Novo Veiculo";
+}
+
+<h3 style="padding-top: 50px">@ViewData["Title"] </h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                    <label asp-for="ClienteId" class="control-label"></label>
+                    <input asp-for="ClienteId" class="form-control" />
+                    <span asp-validation-for="ClienteId" class="text-danger"></span>
+                </div>*@
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cor" class="control-label"></label>
+                <input asp-for="Cor" class="form-control" />
+                <span asp-validation-for="Cor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label"></label>
+                <input asp-for="Marca" class="form-control" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnoFabricacao" class="control-label"></label>
+                <input asp-for="AnoFabricacao" class="form-control" />
+                <span asp-validation-for="AnoFabricacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumPortas" class="control-label"></label>
+                <input asp-for="NumPortas" class="form-control" />
+                <span asp-validation-for="NumPortas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoCombustivel" class="control-label"></label>
+                <input asp-for="TipoCombustivel" class="form-control" />
+                <span asp-validation-for="TipoCombustivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdLugar" class="control-label"></label>
+                <input asp-for="QtdLugar" class="form-control" />
+                <span asp-validation-for="QtdLugar" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ArCondicionado" /> @Html.DisplayNameFor(model => model.ArCondicionado)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Direcao" /> @Html.DisplayNameFor(model => model.Direcao)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FreioAbs" /> @Html.DisplayNameFor(model => model.FreioAbs)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Trava" /> @Html.DisplayNameFor(model => model.Trava)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Airbag" /> @Html.DisplayNameFor(model => model.Airbag)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Vidro" /> @Html.DisplayNameFor(model => model.Vidro)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FarolNeblina" /> @Html.DisplayNameFor(model => model.FarolNeblina)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Situacao" /> @Html.DisplayNameFor(model => model.Situacao)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImagemUpload" class="control-label"></label>
+
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="ImagemUpload" asp-for="ImagemUpload">
+                    <label data-browse="Procurar" style="width: 400px" class="custom-file-label" for="ImagemUpload"></label>
+                    <label style="display: none" id="img_nome"></label>
+                </div>
+
+                <span asp-validation-for="ImagemUpload" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="form-group">
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+    <a class="btn btn-primary" asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<script>
+    $("#ImagemUpload").change(function () {
+        $("#img_nome").text(this.files[0].name);
+        $("#img_nome")[0].style.display = 'block';
+    });
+
+    $("#ImagemUpload").attr("data-val", "true");
+    $("#ImagemUpload").attr("data-val-required", "Preencha o campo Imagem");
+    /* foi adicionada a validação aqui pois, se colocar na viewmodel (atributo [Requerid]), sempre que fizer uma edição, tera que refazer o upload 
+     da imagem.*/
+</script>

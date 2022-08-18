@@ -1,0 +1,135 @@
+﻿@model IEnumerable<LocaFácil.App.Areas.Veiculos.Models.VeiculoViewModel>
+
+@{
+    ViewData["Title"] = "Veículos";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<p supress-by-claim-name="Veiculo" supress-by-claim-value="Adicionar">
+    <a class="btn btn-info" asp-action="Create">Novo Veiculo</a>
+</p>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoFabricacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumPortas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCombustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArCondicionado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direcao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FreioAbs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trava)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Airbag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdLugar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vidro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FarolNeblina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Situacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnoFabricacao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumPortas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoCombustivel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArCondicionado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Direcao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreioAbs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trava)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airbag)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtdLugar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vidro)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FarolNeblina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Situacao)
+                </td>
+                <td class="text-right">
+                    <!--alinhar botões a direita-->
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id"><spam class="fa fa-search"></spam></a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><spam class="fa fa-pencil-alt"></spam></a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><spam class="fa fa-trash"></spam></a>
+                    <!--class dar cor aos botões-->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

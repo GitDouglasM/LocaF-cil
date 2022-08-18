@@ -1,0 +1,135 @@
+﻿@model LocaFácil.App.Areas.Veiculos.Models.VeiculoViewModel
+
+@{
+    ViewData["Title"] = "Detalhe do Veiculo - " + Model.Nome;
+}
+
+<h4 style="padding-top: 50px">@ViewData["Title"]</h4>
+<hr />
+
+<div>
+    <dl class="row">
+        <div class="col-md-4">
+            <img src="~/imagens/@Model.Imagem" alt="@Model.Imagem" style="width: 300px; height: 428px" />
+        </div>
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>*@
+        @*<dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ClienteId)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ClienteId)
+            </dd>*@
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Marca)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AnoFabricacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AnoFabricacao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumPortas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumPortas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoCombustivel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoCombustivel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ArCondicionado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ArCondicionado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Direcao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direcao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FreioAbs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FreioAbs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Trava)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trava)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Airbag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Airbag)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.QtdLugar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QtdLugar)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vidro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vidro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FarolNeblina)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FarolNeblina)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Situacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Situacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a supress-by-claim-name="Produto" supress-by-claim-value="Editar" class="btn btn-dark" sp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a class="btn btn-info" href="javascript:window.history.back();">Voltar</a>
+</div>
+
